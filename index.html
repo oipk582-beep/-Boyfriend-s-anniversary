@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#ffeef2;
+}
+
+/* 🔐 หน้าใส่รหัส */
+#lockScreen{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.lock-box{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.lock-box input{
+  padding:10px;
+  width:200px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  margin-top:10px;
+}
+
+.lock-box button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  border-radius:8px;
+  background:#ff5a8a;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+#error{
+  color:red;
+  margin-top:10px;
+}
+
+/* 📕 เนื้อหา */
+#content{
+  display:none;
+}
+
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:20px;
+}
+
+/* 📘 หน้า */
+.page{
+  margin-bottom:30px;
+}
+
+.page img{
+  width:100%;
+  border-radius:15px 15px 0 0;
+  display:block;
+}
+
+.text-box{
+  background:white;
+  padding:20px;
+  border-radius:0 0 15px 15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+  line-height:1.7;
+}
+
+/* 💖 ปก */
+.cover{
+  height:80vh;
+  background:url("cover.jpg") center/cover no-repeat;
+  border-radius:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+}
+
+.cover-box{
+  background:rgba(0,0,0,.4);
+  padding:30px;
+  border-radius:20px;
+}
+
+.cover h1{
+  font-size:32px;
+}
+
+.cover h2{
+  margin-top:10px;
+  font-size:26px;
+}
+
+.cover p{
+  margin-top:20px;
+  opacity:.9;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔐 ใส่รหัส -->
+<div id="lockScreen">
+  <div class="lock-box">
+    <h2>สุขสันต์วันครอบรอบ 💕</h2>
+    <input type="password" id="password" placeholder="วันครอบรอบ">
+    <br>
+    <button onclick="checkPassword()">เข้าได้เลย</button>
+    <div id="error"></div>
+  </div>
+</div>
+
+<!-- 💖 เนื้อหา -->
+<div id="content">
+  <div class="container">
+
+    <!-- 📕 ปก -->
+    <div class="page">
+      <div class="cover">
+        <div class="cover-box">
+          <h1>ถึงคนพิเศษของเค้า 💖</h1>
+          <h2 id="loverName"></h2>
+          <p>ขอบคุณที่อยู่ด้วยกันเสมอ</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🖼️ รูปที่ 1 -->
+    <div class="page">
+      <img src="fan1.jpg">
+      <div class="text-box">รูปแรกของความทรงจำเรา ❤️</div>
+    </div>
+
+    <!-- 🖼️ รูปที่ 2 -->
+    <div class="page">
+      <img src="fan2.jpg">
+      <div class="text-box">อยู่ด้วยกันแบบนี้ตลอดไปนะ 💕</div>
+    </div>
+
+    <!-- 🖼️ รูปที่ 3 -->
+    <div class="page">
+      <img src="fan3.jpg">
+      <div class="text-box">เค้ารักเธอมากจริงๆ 🥰</div>
+    </div>
+
+    <!-- 🖼️ รูปที่ 4 -->
+    <div class="page">
+      <img src="fan4.jpg">
+      <div class="text-box">สุขสันต์วันครบรอบ 💞</div>
+    </div>
+
+    <!-- 🖼️ รูปที่ 5 -->
+    <div class="page">
+      <img src="fan4.jpg">
+      <div class="text-box">สุขสันต์วันครบรอบ 💞</div>
+    </div>
+
+  <!-- 🖼️ รูปที่ 6 -->
+    <div class="page">
+      <img src="fan4.jpg">
+      <div class="text-box">สุขสันต์วันครบรอบ 💞</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const correctPassword = "123456";
+const loverName = "เบบี๋";
+
+function checkPassword(){
+  const input = document.getElementById("password").value;
+  if(input === correctPassword){
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    document.getElementById("loverName").innerText = loverName;
+  }else{
+    document.getElementById("error").innerText = "รหัสไม่ถูกนะ ลองใหม่ ❤️";
+  }
+}
+</script>
+
+</body>
+</html>
